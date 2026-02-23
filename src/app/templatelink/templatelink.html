@@ -1,0 +1,35 @@
+	<p>Hello {{ firstname }} {{ lastname }} ! </p>
+	<p>{{ year }}</p>
+
+<ul>
+    @for (topic of topics; track topic) {
+      <li>{{ topic }}</li>
+    }
+</ul>
+
+	<p>Pipes</p>
+
+	<p>currencies: {{ amount | currency:'EUR' }}</p>
+	<p>currencies: {{ amount | currency:'$' }}</p>
+	<p>date: {{ mydate | date: 'short' }}</p>
+
+<div>
+<button (click)="onClick()">Click me {{toto()}} times!</button>
+</div>
+
+  <ul>
+    @for (o of myobjects; track o.id) {
+      @if (o.category == "fruit") {
+        <li>{{ o.name }}</li>
+      } 
+    }
+  </ul>
+
+  	<p><i>Pick a hero from the list</i></p>
+	<ul>
+	  @for (hero of heroes; track hero) {
+	    <li (click)="selectHero(hero)">{{hero}}</li>
+	  }
+	</ul>
+	Selected hero: {{selectedHero}}
+    <app-hero-details [hero]="selectedHero"/>
