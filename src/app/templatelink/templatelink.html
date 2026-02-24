@@ -1,6 +1,8 @@
 	<p>Hello {{ firstname }} {{ lastname }} ! </p>
 	<p>{{ year }}</p>
 
+     <mybutton></mybutton>
+
 <ul>
     @for (topic of topics; track topic) {
       <li>{{ topic }}</li>
@@ -37,3 +39,7 @@
 
     <app-myform/>
     <app-attributedirectives/>
+
+   <h3>Angular Router</h3>
+   <a routerLink="/button">The button page</a>
+ 

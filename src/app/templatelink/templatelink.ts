@@ -3,10 +3,13 @@ import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
 import { HeroDetails } from '../hero-details/hero-details';
 import { MyformComponent } from '../forms/myform/myform.component';
 import { AttributedirectivesComponent } from '../attributedirectives/attributedirectives.component';
+import { Button } from "../button/button";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-templatelink',
-  imports: [CurrencyPipe, DatePipe, TitleCasePipe, HeroDetails, MyformComponent, AttributedirectivesComponent],
+  imports: [Button, CurrencyPipe, DatePipe, TitleCasePipe, 
+    HeroDetails, MyformComponent, AttributedirectivesComponent, Button, RouterLink],
   templateUrl: './templatelink.html',
   styleUrl: './templatelink.css',
 })
