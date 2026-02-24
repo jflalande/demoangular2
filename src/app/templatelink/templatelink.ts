@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
 import { HeroDetails } from '../hero-details/hero-details';
+import { MyformComponent } from '../forms/myform/myform.component';
 
 @Component({
   selector: 'app-templatelink',
-  imports: [CurrencyPipe, DatePipe, TitleCasePipe, HeroDetails],
+  imports: [CurrencyPipe, DatePipe, TitleCasePipe, HeroDetails, MyformComponent],
   templateUrl: './templatelink.html',
   styleUrl: './templatelink.css',
 })
@@ -40,4 +41,10 @@ export class Templatelink {
     alert("You Clicked Me!");
     this.i++;
   }
+
+  messageFromChild: string = "";
+  receivedMessageFromHeroChild($event: string) {
+    this.messageFromChild = $event;
+    console.log("Message from child: " + $event);
+    }
 }

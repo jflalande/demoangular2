@@ -31,5 +31,8 @@
 	    <li (click)="selectHero(hero)">{{hero}}</li>
 	  }
 	</ul>
-	Selected hero: {{selectedHero}}
-    <app-hero-details [hero]="selectedHero"/>
+	<p>Selected hero: {{selectedHero}}</p>
+    <p>My child hero says: {{messageFromChild}}</p>
+    <app-hero-details [hero]="selectedHero" (messageToParent)="receivedMessageFromHeroChild($event)"/>
+
+    <app-myform/>

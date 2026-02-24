@@ -1,0 +1,48 @@
+<p>Forms</p>
+
+<h3>Simple form:</h3>
+<input [formControl]="myinput">
+
+Value: {{myinput.value}}
+
+<h3>Form Groups:</h3>
+<form [formGroup]="myform">
+  <input formControlName="firstname" >
+  <input formControlName="lastname">
+  <button   (click)="show()">Send</button>
+</form>
+
+Value: {{result}}
+
+<form [formGroup]="mydynform">
+  <div formArrayName="aliases">
+    <h3>Form Arrays:</h3>
+    <button type="button" (click)="addAlias()">+ Add another alias</button>
+
+    @for (alias of aliases.controls; track $index; let i = $index) {
+      <div>
+        <!-- The repeated alias template -->
+        <label for="alias-{{ i }}">Alias:</label>
+        <input id="alias-{{ i }}" type="text" [formControlName]="i">
+      </div>
+    }
+
+    <button (click)="aliasesShow()">Send</button>
+  </div>
+</form>
+
+<h3>Validated Form Groups:</h3>
+<form [formGroup]="myvalidatedform">
+  <p>Firstname: <input formControlName="firstname"></p>
+  <p>Lastname: <input formControlName="lastname"></p>
+  <p>Age: <input formControlName="age"></p>
+  <p>Gender:
+    <select formControlName="gender">
+      <option [ngValue]="null" disabled>Select gender</option>
+      @for (gender of genders; track gender.id) {
+        <option [ngValue]="gender.id">{{ gender.name }}</option>
+      }
+    </select>
+  </p>
+  <button (click)="show()" [disabled]="!myvalidatedform.valid">Send</button>
+</form>
