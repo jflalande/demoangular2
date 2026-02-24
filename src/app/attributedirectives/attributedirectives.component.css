@@ -1,0 +1,18 @@
+.course {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.helpful {
+  color: red;
+}
+
+.saveable {
+  color: limegreen;
+}
+
+.study,
+.modified {
+  font-family: "Brush Script MT", cursive;
+  font-size: 2rem;
+}
