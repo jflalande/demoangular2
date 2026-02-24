@@ -5,11 +5,13 @@ import { MyformComponent } from '../forms/myform/myform.component';
 import { AttributedirectivesComponent } from '../attributedirectives/attributedirectives.component';
 import { Button } from "../button/button";
 import { RouterLink } from '@angular/router';
+import { UsingAServiceComponent } from '../using-aservice/using-aservice.component';
 
 @Component({
   selector: 'app-templatelink',
   imports: [Button, CurrencyPipe, DatePipe, TitleCasePipe, 
-    HeroDetails, MyformComponent, AttributedirectivesComponent, Button, RouterLink],
+    HeroDetails, MyformComponent, AttributedirectivesComponent, Button, RouterLink,
+   UsingAServiceComponent],
   templateUrl: './templatelink.html',
   styleUrl: './templatelink.css',
 })
