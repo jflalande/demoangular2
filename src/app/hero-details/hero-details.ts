@@ -1,5 +1,5 @@
 import { UpperCasePipe } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, input, output, Output } from '@angular/core';
 import { Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -12,10 +12,12 @@ import { FormsModule } from '@angular/forms';
 export class HeroDetails {
 
     // Propriété bindée (en "input" du composant)
-    @Input() hero = 'default';
+    // @Input() hero = 'default';
+    hero = input<string>('default');
 
     // Property that can be mapped into the parent
-    @Output() messageToParent = new EventEmitter<string>(); 
+    //@Output() messageToParent = new EventEmitter<string>(); 
+    messageToParent = output<string>();
 
     message = '';
 
