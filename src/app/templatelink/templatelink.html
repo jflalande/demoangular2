@@ -19,6 +19,10 @@
 <button (click)="onClick()">Click me {{toto()}} times!</button>
 </div>
 
+<p>
+<input (input)="surSaisie($event)">
+</p>
+
   <ul>
     @for (o of myobjects; track o.id) {
       @if (o.category == "fruit") {

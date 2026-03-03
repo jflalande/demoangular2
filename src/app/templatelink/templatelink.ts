@@ -17,13 +17,20 @@ import { UsingAServiceComponent } from '../using-aservice/using-aservice.compone
 })
 export class Templatelink {
 
+
   firstname = "JF";
   lastname = "Lalande";
   year = 2026;
   topics: Set<string> = new Set();
   amount = 20;
   mydate = 1771861650;
+
   i: number = 1;
+
+  surSaisie($event: Event) {
+    const input = $event.target as HTMLInputElement;
+    console.log('Valeur saisie :', input.value);
+}
   myobjects = [{ name: "fraise", category:'fruit', id: 1 },
      { name: "object2",  category:'truc', id: 2}, 
      { name: "object3", category:'machin', id: 3}];
